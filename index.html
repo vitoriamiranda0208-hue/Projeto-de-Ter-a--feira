@@ -1,184 +1,20 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Aumor em Patas</title>
 
-<style>
+<!-- LIGAÇÃO DO CSS -->
+<link rel="stylesheet" href="style.css">
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family: Arial, sans-serif;
-}
-
-body{
-    background:#f5f5f5;
-}
-
-/* MENU */
-
-header{
-    background:#4b00b5;
-    padding:20px;
-}
-
-nav{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-}
-
-.logo{
-    color:white;
-    font-size:35px;
-    font-weight:bold;
-}
-
-.logo span{
-    color:#ff4d4d;
-}
-
-.menu{
-    display:flex;
-    gap:25px;
-}
-
-.menu a{
-    color:white;
-    text-decoration:none;
-    font-size:15px;
-    transition:0.3s;
-}
-
-.menu a:hover{
-    color:#ffccff;
-}
-
-/* CONTEÚDO */
-
-.container{
-    width:90%;
-    margin:auto;
-    padding:40px 0;
-}
-
-.topo{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    gap:40px;
-    flex-wrap:wrap;
-}
-
-.topo img{
-    width:350px;
-    border-radius:15px;
-}
-
-.texto{
-    flex:1;
-}
-
-.texto h2{
-    margin-bottom:20px;
-    color:#333;
-    font-size:32px;
-}
-
-.texto p{
-    line-height:1.8;
-    color:#444;
-    text-align:justify;
-}
-
-/* CAIXAS */
-
-.cards{
-    margin-top:50px;
-    display:flex;
-    justify-content:center;
-    gap:20px;
-    flex-wrap:wrap;
-}
-
-.card{
-    background:white;
-    width:300px;
-    padding:20px;
-    border-radius:15px;
-    box-shadow:0 0 10px rgba(0,0,0,0.1);
-    text-align:center;
-}
-
-.card h3{
-    margin-bottom:15px;
-    color:#4b00b5;
-}
-
-.card p{
-    color:#555;
-    line-height:1.6;
-}
-
-/* BOTÕES */
-
-.botoes{
-    margin-top:40px;
-    display:flex;
-    justify-content:center;
-    gap:20px;
-    flex-wrap:wrap;
-}
-
-.botoes button{
-    background:#4b00b5;
-    color:white;
-    border:none;
-    padding:15px 25px;
-    border-radius:15px;
-    font-size:16px;
-    cursor:pointer;
-    transition:0.3s;
-}
-
-.botoes button:hover{
-    background:#6c2cff;
-    transform:scale(1.05);
-}
-
-/* RODAPÉ */
-
-footer{
-    background:#4b00b5;
-    color:white;
-    text-align:center;
-    padding:20px;
-    margin-top:50px;
-}
-
-@media(max-width:768px){
-
-    .topo{
-        flex-direction:column;
-        text-align:center;
-    }
-
-    .topo img{
-        width:100%;
-    }
-
-    .menu{
-        display:none;
-    }
-
-}
-
-</style>
 </head>
+
 <body>
+
+<!-- MENU -->
 
 <header>
 
@@ -197,6 +33,8 @@ footer{
 </nav>
 
 </header>
+
+<!-- CONTEÚDO -->
 
 <section class="container">
 
@@ -223,34 +61,46 @@ incentivar a adoção responsável e combater qualquer forma de violência contr
 
 </div>
 
+<!-- CARDS -->
+
 <div class="cards">
 
 <div class="card">
 <h3>Como Posso Ajudar?</h3>
+
 <p>
-Você pode fazer a diferença através de doações, adoção,
-apadrinhamento ou ajudando em nossos resgates.
+Você pode fazer a diferença através de doações,
+adoção, apadrinhamento ou ajudando em nossos resgates.
 Cada atitude conta.
 </p>
+
 </div>
 
 <div class="card">
+
 <h3>Nosso Objetivo</h3>
+
 <p>
 Criar um futuro mais justo e compassivo para todos os animais,
 promovendo cuidado, proteção e novas oportunidades.
 </p>
+
 </div>
 
 <div class="card">
+
 <h3>Ajude um Animal</h3>
+
 <p>
 Se encontrar um animal abandonado ou ferido,
 entre em contato conosco para oferecer o suporte necessário.
 </p>
+
 </div>
 
 </div>
+
+<!-- BOTÕES -->
 
 <div class="botoes">
 
@@ -264,8 +114,12 @@ entre em contato conosco para oferecer o suporte necessário.
 
 </section>
 
+<!-- RODAPÉ -->
+
 <footer>
+
 © 2026 - Aumor em Patas 🐶🐱
+
 </footer>
 
 </body>
