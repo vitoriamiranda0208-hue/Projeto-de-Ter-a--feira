@@ -5,9 +5,68 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aumor em Patas — Início</title>
-    <link rel="stylesheet" href="style.css">
 
     <style>
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            text-decoration:none;
+            font-family:Arial, Helvetica, sans-serif;
+        }
+
+        body{
+            background:#fff;
+            color:#222;
+        }
+
+        /* =====================
+           MENU
+           ===================== */
+
+        header{
+            width:100%;
+            background:#fff;
+            box-shadow:0 2px 10px rgba(0,0,0,0.08);
+            position:sticky;
+            top:0;
+            z-index:1000;
+        }
+
+        nav{
+            max-width:1200px;
+            margin:auto;
+            padding:18px 32px;
+            display:flex;
+            align-items:center;
+            justify-content:space-between;
+        }
+
+        .logo{
+            font-size:1.5rem;
+            font-weight:800;
+            color:#4b00b5;
+        }
+
+        .logo span{
+            color:#ff4d4d;
+        }
+
+        .menu{
+            display:flex;
+            gap:28px;
+        }
+
+        .menu a{
+            color:#333;
+            font-weight:700;
+            transition:.3s;
+        }
+
+        .menu a:hover{
+            color:#7c00e0;
+        }
 
         /* =====================
            HERO HOME
@@ -44,7 +103,6 @@
         }
 
         .hero-txt h1 {
-            font-family: 'Playfair Display', serif;
             font-size: clamp(2.6rem, 5vw, 4.2rem);
             color: #fff;
             font-weight: 900;
@@ -65,9 +123,50 @@
             max-width: 460px;
         }
 
+        .hero-badge{
+            background:rgba(255,255,255,0.15);
+            color:#fff;
+            width:max-content;
+            padding:10px 16px;
+            border-radius:50px;
+            margin-bottom:20px;
+            font-weight:700;
+        }
+
+        .grupo-botoes{
+            display:flex;
+            gap:16px;
+            flex-wrap:wrap;
+        }
+
+        .btn{
+            padding:14px 24px;
+            border-radius:12px;
+            font-weight:700;
+            transition:.3s;
+        }
+
+        .btn-branco{
+            background:#fff;
+            color:#4b00b5;
+        }
+
+        .btn-branco:hover{
+            transform:translateY(-3px);
+        }
+
+        .btn-contorno-w{
+            border:2px solid #fff;
+            color:#fff;
+        }
+
+        .btn-contorno-w:hover{
+            background:#fff;
+            color:#4b00b5;
+        }
 
         /* =====================
-           BLOB ANIMADO
+           BLOB
            ===================== */
 
         .blob-wrap {
@@ -86,13 +185,23 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 8rem;
+            overflow:hidden;
             animation: blobPulse 7s ease-in-out infinite;
         }
 
+        .blob img{
+            width:100%;
+            height:100%;
+            object-fit:cover;
+        }
+
         @keyframes blobPulse {
-            0%,  100% { border-radius: 60% 40% 55% 45% / 50% 60% 40% 50%; }
-            50%        { border-radius: 40% 60% 45% 55% / 60% 40% 55% 45%; }
+            0%,100% {
+                border-radius: 60% 40% 55% 45% / 50% 60% 40% 50%;
+            }
+            50% {
+                border-radius: 40% 60% 45% 55% / 60% 40% 55% 45%;
+            }
         }
 
         .badge-flutuante {
@@ -110,8 +219,16 @@
             animation: flutuar 4s ease-in-out infinite;
         }
 
-        .badge-flutuante.b1 { top: 36px;    right: 0;                      }
-        .badge-flutuante.b2 { bottom: 56px; left: 0; animation-delay: 1.2s; }
+        .badge-flutuante.b1 {
+            top: 36px;
+            right: 0;
+        }
+
+        .badge-flutuante.b2 {
+            bottom: 56px;
+            left: 0;
+            animation-delay: 1.2s;
+        }
 
         .ponto {
             width: 9px;
@@ -121,13 +238,46 @@
         }
 
         @keyframes flutuar {
-            0%,  100% { transform: translateY(0);     }
-            50%        { transform: translateY(-10px); }
+            0%,100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
         }
 
+        /* =====================
+           STATS
+           ===================== */
+
+        .stats-bar{
+            display:grid;
+            grid-template-columns:repeat(4,1fr);
+            gap:20px;
+            max-width:1100px;
+            margin:auto;
+            margin-top:-50px;
+            padding:0 32px;
+            position:relative;
+            z-index:10;
+        }
+
+        .stat{
+            background:#fff;
+            border-radius:22px;
+            padding:28px;
+            text-align:center;
+            box-shadow:0 12px 30px rgba(0,0,0,0.08);
+        }
+
+        .stat h3{
+            color:#4b00b5;
+            font-size:2rem;
+            margin-bottom:8px;
+        }
 
         /* =====================
-           SEÇÃO SOBRE (resumo)
+           SOBRE
            ===================== */
 
         .home-sobre {
@@ -140,26 +290,51 @@
             align-items: center;
         }
 
-        .img-wrap {
-            position: relative;
+        .galeria img{
+            width:100%;
+            border-radius:22px;
         }
 
-        .img-wrap img {
-            width: 100%;
-            height: 420px;
-            object-fit: cover;
-            border-radius: 28px;
-            display: block;
-            box-shadow: 0 24px 60px rgba(75, 0, 181, 0.18);
+        .imagem-principal{
+            height:420px;
+            object-fit:cover;
+            margin-bottom:18px;
         }
 
-        .img-wrap::after {
-            content: '';
-            position: absolute;
-            inset: 18px -18px -18px 18px;
-            border: 3px solid #e6d9ff;
-            border-radius: 28px;
-            z-index: -1;
+        .miniaturas{
+            display:flex;
+            gap:14px;
+        }
+
+        .miniaturas img{
+            width:110px;
+            height:90px;
+            object-fit:cover;
+            cursor:pointer;
+            transition:.3s;
+        }
+
+        .miniaturas img:hover{
+            transform:scale(1.05);
+        }
+
+        .sec-badge{
+            background:#f3ebff;
+            color:#6d00d3;
+            width:max-content;
+            padding:10px 16px;
+            border-radius:40px;
+            font-weight:700;
+            margin-bottom:18px;
+        }
+
+        .sec-titulo{
+            font-size:2.5rem;
+            margin-bottom:20px;
+        }
+
+        .sec-titulo span{
+            color:#7c00e0;
         }
 
         .sobre-txt p {
@@ -169,20 +344,74 @@
             font-size: 0.97rem;
         }
 
-
-        /* =====================
-           SEÇÃO CARDS
-           ===================== */
-
-        .cards-home {
-            max-width: 1100px;
-            margin: auto;
-            padding: 0 32px 90px;
+        .chips{
+            display:flex;
+            flex-wrap:wrap;
+            gap:12px;
+            margin-top:20px;
         }
 
+        .chip{
+            background:#f3ebff;
+            color:#4b00b5;
+            padding:10px 16px;
+            border-radius:30px;
+            font-weight:700;
+        }
+
+        .btn-roxo{
+            background:#6d00d3;
+            color:#fff;
+            display:inline-block;
+        }
 
         /* =====================
-           BANNER CTA
+           CARDS
+           ===================== */
+
+        .cards-home{
+            max-width:1100px;
+            margin:auto;
+            padding:0 32px 90px;
+        }
+
+        .sec-sub{
+            color:#777;
+            margin-top:10px;
+            margin-bottom:40px;
+        }
+
+        .cards-grid{
+            display:grid;
+            grid-template-columns:repeat(3,1fr);
+            gap:28px;
+        }
+
+        .card{
+            background:#fff;
+            border-radius:24px;
+            padding:34px;
+            box-shadow:0 12px 30px rgba(0,0,0,0.08);
+            transition:.3s;
+        }
+
+        .card-icone{
+            font-size:3rem;
+            margin-bottom:18px;
+        }
+
+        .card h3{
+            margin-bottom:16px;
+            color:#4b00b5;
+        }
+
+        .card p{
+            color:#666;
+            line-height:1.7;
+        }
+
+        /* =====================
+           CTA
            ===================== */
 
         .cta-banner {
@@ -193,18 +422,7 @@
             overflow: hidden;
         }
 
-        .cta-banner::before {
-            content: '❤️';
-            position: absolute;
-            font-size: 18rem;
-            opacity: 0.05;
-            left: -40px;
-            bottom: -40px;
-            pointer-events: none;
-        }
-
         .cta-banner h2 {
-            font-family: 'Playfair Display', serif;
             font-size: clamp(2rem, 4vw, 3rem);
             color: #fff;
             margin-bottom: 14px;
@@ -217,42 +435,69 @@
             line-height: 1.75;
         }
 
+        /* =====================
+           FOOTER
+           ===================== */
+
+        footer{
+            background:#1d073f;
+            color:#fff;
+        }
+
+        .footer-inner{
+            max-width:1100px;
+            margin:auto;
+            padding:70px 32px;
+            display:grid;
+            grid-template-columns:2fr 1fr 1fr;
+            gap:50px;
+        }
+
+        .footer-col h5{
+            margin-bottom:18px;
+            font-size:1rem;
+        }
+
+        .footer-col ul{
+            list-style:none;
+        }
+
+        .footer-col li{
+            margin-bottom:12px;
+        }
+
+        .footer-col a{
+            color:#ddd;
+        }
+
+        .footer-fundo{
+            text-align:center;
+            padding:20px;
+            border-top:1px solid rgba(255,255,255,0.1);
+            color:#bbb;
+        }
 
         /* =====================
            RESPONSIVO
            ===================== */
 
-        @media (max-width: 900px) {
+        @media(max-width:900px){
 
-            .hero-inner {
-                grid-template-columns: 1fr;
+            .hero-inner,
+            .home-sobre,
+            .cards-grid,
+            .footer-inner,
+            .stats-bar{
+                grid-template-columns:1fr;
             }
 
-            .blob-wrap {
-                order: -1;
+            .blob{
+                width:260px;
+                height:260px;
             }
 
-            .blob {
-                width: 260px;
-                height: 260px;
-                font-size: 6rem;
-            }
-
-            .badge-flutuante {
-                display: none;
-            }
-
-            .home-sobre {
-                grid-template-columns: 1fr;
-                padding: 56px 24px;
-            }
-
-            .img-wrap img {
-                height: 280px;
-            }
-
-            .cards-home {
-                padding: 0 24px 64px;
+            .menu{
+                display:none;
             }
 
         }
@@ -260,124 +505,286 @@
     </style>
 
 </head>
+
 <body>
-
-
-<!-- =====================
-     MENU
-     ===================== -->
 
 <header>
     <nav>
         <a class="logo" href="index.html"><span>Aumor</span> em Patas 🐾</a>
+
         <div class="menu">
-            <a href="Sobre.html">SOBRE</a>
-            <a href="ajudar.html">QUERO AJUDAR</a>
-            <a href="objetivo.html">NOSSO OBJETIVO</a>
+            <a href="#">SOBRE</a>
+            <a href="#">QUERO AJUDAR</a>
+            <a href="#">NOSSO OBJETIVO</a>
         </div>
     </nav>
 </header>
 
-
-<!-- =====================
-     HERO
-     ===================== -->
-
 <section class="hero-home">
+
     <div class="hero-inner">
 
         <div class="hero-txt">
+
             <div class="hero-badge">🐾 ONG de Proteção Animal</div>
-            <h1>Todo animal merece um lar cheio de <em>amor</em></h1>
-            <p>A Aumor em Patas é dedicada ao resgate, cuidado e adoção responsável de animais. Juntos podemos transformar vidas.</p>
-            <div class="grupo-botoes" style="justify-content: flex-start;">
-                <a href="ajudar.html" class="btn btn-branco">Quero ajudar 🐾</a>
-                <a href="Sobre.html"  class="btn btn-contorno-w">Conheça a ONG</a>
+
+            <h1>
+                Todo animal merece um lar cheio de <em>amor</em>
+            </h1>
+
+            <p>
+                A Aumor em Patas é dedicada ao resgate, cuidado e adoção responsável de animais.
+                Juntos podemos transformar vidas.
+            </p>
+
+            <div class="grupo-botoes">
+                <a href="#" class="btn btn-branco">Quero ajudar 🐾</a>
+                <a href="#" class="btn btn-contorno-w">Conheça a ONG</a>
             </div>
+
         </div>
 
+        <!-- FOTO SUBSTITUÍDA -->
         <div class="blob-wrap">
-            <div class="blob">🐾</div>
-            <div class="badge-flutuante b1"><div class="ponto"></div> +230 animais resgatados</div>
-            <div class="badge-flutuante b2">🏠 148 adoções em 2024</div>
+
+            <div class="blob">
+                <img src="cachorro-gato.png" alt="Cachorro e gato">
+            </div>
+
+            <div class="badge-flutuante b1">
+                <div class="ponto"></div>
+                +230 animais resgatados
+            </div>
+
+            <div class="badge-flutuante b2">
+                🏠 148 adoções em 2024
+            </div>
+
         </div>
 
     </div>
+
 </section>
 
-
-<!-- =====================
-     ESTATÍSTICAS
-     ===================== -->
-
 <div class="stats-bar">
-    <div class="stat"><h3>230+</h3><p>Animais resgatados</p></div>
-    <div class="stat"><h3>148</h3><p>Adoções realizadas</p></div>
-    <div class="stat"><h3>12</h3><p>Voluntários ativos</p></div>
-    <div class="stat"><h3>5</h3><p>Anos de atuação</p></div>
+
+    <div class="stat">
+        <h3>230+</h3>
+        <p>Animais resgatados</p>
+    </div>
+
+    <div class="stat">
+        <h3>148</h3>
+        <p>Adoções realizadas</p>
+    </div>
+
+    <div class="stat">
+        <h3>12</h3>
+        <p>Voluntários ativos</p>
+    </div>
+
+    <div class="stat">
+        <h3>5</h3>
+        <p>Anos de atuação</p>
+    </div>
+
 </div>
-
-
-<!-- =====================
-     SOBRE (resumo)
-     ===================== -->
 
 <section class="home-sobre">
 
-   <div class="galeria fade">
+    <div class="galeria fade">
 
-    <img
-        id="imagemPrincipal"
-        class="imagem-principal"
-        src="https://images.unsplash.com/photo-1517849845537-4d257902454a?q=80&w=900&auto=format&fit=crop"
-    />
-
-    <div class="miniaturas">
-
+        <!-- FOTO PRINCIPAL ALTERADA -->
         <img
-            src="https://images.unsplash.com/photo-1517849845537-4d257902454a?q=80&w=900&auto=format&fit=crop"
-            onclick="trocarImagem(this)"
-        />
+            id="imagemPrincipal"
+            class="imagem-principal"
+            src="cachorro-gato.png"
+        >
 
-        <img
-            src="https://gatices.blogfolha.uol.com.br/files/2020/07/aug.jpg"
-            onclick="trocarImagem(this)"
-        />
+        <div class="miniaturas">
 
-        <img
-            src="https://images.unsplash.com/photo-1548199973-03cce0bbc87b?q=80&w=900&auto=format&fit=crop"
-            onclick="trocarImagem(this)"
-        />
+            <img
+                src="cachorro-gato.png"
+                onclick="trocarImagem(this)"
+            >
+
+            <img
+                src="https://gatices.blogfolha.uol.com.br/files/2020/07/aug.jpg"
+                onclick="trocarImagem(this)"
+            >
+
+            <img
+                src="https://images.unsplash.com/photo-1548199973-03cce0bbc87b?q=80&w=900&auto=format&fit=crop"
+                onclick="trocarImagem(this)"
+            >
+
+        </div>
 
     </div>
 
-</div>
+    <div>
+
         <div class="sec-badge">Quem somos</div>
-        <h2 class="sec-titulo">Uma história feita de <span>amor</span></h2>
+
+        <h2 class="sec-titulo">
+            Uma história feita de <span>amor</span>
+        </h2>
+
         <div class="sobre-txt">
-            <p>Somos uma organização dedicada à proteção, cuidado e bem-estar dos animais. Nosso propósito é dar voz àqueles que não podem se defender.</p>
-            <p>Acreditamos que todo ser vivo merece respeito, amor e dignidade. Por isso trabalhamos diariamente para promover adoção responsável e combater qualquer forma de violência contra os animais.</p>
+
+            <p>
+                Somos uma organização dedicada à proteção, cuidado e bem-estar
+                dos animais.
+            </p>
+
+            <p>
+                Acreditamos que todo ser vivo merece respeito, amor e dignidade.
+            </p>
+
         </div>
+
         <div class="chips">
             <span class="chip">💛 Amor</span>
             <span class="chip">🛡️ Proteção</span>
             <span class="chip">🏡 Adoção</span>
             <span class="chip">🤝 Solidariedade</span>
         </div>
+
         <br>
-        <a href="Sobre.html" class="btn btn-roxo" style="margin-top: 8px;">Saiba mais sobre nós</a>
+
+        <a href="#" class="btn btn-roxo">
+            Saiba mais sobre nós
+        </a>
+
     </div>
 
 </section>
 
+<div class="cards-home">
 
-<!-- =====================
-     CARDS
-     ===================== -->
+    <div class="sec-badge">O que fazemos</div>
 
-     
-    <script>
-        function trocarImagem(imagem){
+    <h2 class="sec-titulo">
+        Como <span>atuamos</span>
+    </h2>
+
+    <p class="sec-sub">
+        Cada ação representa um animal com mais chance de ter uma vida digna.
+    </p>
+
+    <div class="cards-grid">
+
+        <div class="card fade">
+
+            <div class="card-icone">🚑</div>
+
+            <h3>Resgate e Socorro</h3>
+
+            <p>
+                Atuamos no resgate de animais em situação de risco.
+            </p>
+
+        </div>
+
+        <div class="card fade">
+
+            <div class="card-icone">💊</div>
+
+            <h3>Cuidados Veterinários</h3>
+
+            <p>
+                Todos os animais recebem vacinação e acompanhamento completo.
+            </p>
+
+        </div>
+
+        <div class="card fade">
+
+            <div class="card-icone">🏡</div>
+
+            <h3>Adoção Responsável</h3>
+
+            <p>
+                Garantimos um lar adequado e amoroso para cada animal.
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+<section class="cta-banner">
+
+    <h2>Faça parte dessa história 🐾</h2>
+
+    <p>
+        Seu apoio é fundamental para continuarmos resgatando animais.
+    </p>
+
+    <div class="grupo-botoes">
+
+        <a href="#" class="btn btn-branco">QUERO DOAR</a>
+
+        <a href="#" class="btn btn-contorno-w">QUERO ADOTAR</a>
+
+        <a href="#" class="btn btn-contorno-w">QUERO APADRINHAR</a>
+
+    </div>
+
+</section>
+
+<footer>
+
+    <div class="footer-inner">
+
+        <div class="footer-marca">
+
+            <a class="logo" href="#">
+                <span>Aumor</span> em Patas 🐾
+            </a>
+
+            <p>
+                ONG dedicada ao resgate, cuidado e adoção responsável.
+            </p>
+
+        </div>
+
+        <div class="footer-col">
+
+            <h5>Páginas</h5>
+
+            <ul>
+                <li><a href="#">Início</a></li>
+                <li><a href="#">Sobre nós</a></li>
+                <li><a href="#">Quero ajudar</a></li>
+            </ul>
+
+        </div>
+
+        <div class="footer-col">
+
+            <h5>Contato</h5>
+
+            <ul>
+                <li><a href="#">(11) 99999-0000</a></li>
+                <li><a href="#">contato@aumorempatas.org</a></li>
+                <li><a href="#">São Paulo, SP</a></li>
+            </ul>
+
+        </div>
+
+    </div>
+
+    <div class="footer-fundo">
+        © 2026 — <strong>Aumor em Patas</strong> 🐶🐱
+    </div>
+
+</footer>
+
+<script>
+
+function trocarImagem(imagem){
 
     const principal =
         document.getElementById('imagemPrincipal');
@@ -386,210 +793,41 @@
 
 }
 
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('show');
-            }
-        });
-    }, { threshold: 0.12 });
+const cards = document.querySelectorAll('.card');
 
-    document.querySelectorAll('.fade').forEach(el => observer.observe(el));
+cards.forEach(card => {
 
+    card.addEventListener('mousemove', (e) => {
 
+        const rect = card.getBoundingClientRect();
 
-    /* =====================
-       EFEITO 3D NOS CARDS
-       ===================== */
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
 
-    const cards = document.querySelectorAll('.card');
+        const centerX = rect.width / 2;
+        const centerY = rect.height / 2;
 
-    cards.forEach(card => {
+        const rotateY = ((x - centerX) / centerX) * 12;
+        const rotateX = ((centerY - y) / centerY) * 12;
 
-        card.addEventListener('mousemove', (e) => {
-
-            const rect = card.getBoundingClientRect();
-
-            const x = e.clientX - rect.left;
-            const y = e.clientY - rect.top;
-
-            const centerX = rect.width / 2;
-            const centerY = rect.height / 2;
-
-            const rotateY = ((x - centerX) / centerX) * 12;
-            const rotateX = ((centerY - y) / centerY) * 12;
-
-            card.style.transform =
-                `perspective(1000px)
-                 rotateX(${rotateX}deg)
-                 rotateY(${rotateY}deg)
-                 scale(1.04)`;
-
-        });
-
-        card.addEventListener('mouseleave', () => {
-
-            card.style.transform =
-                'perspective(1000px) rotateX(0) rotateY(0) scale(1)';
-
-        });
+        card.style.transform =
+            `perspective(1000px)
+             rotateX(${rotateX}deg)
+             rotateY(${rotateY}deg)
+             scale(1.04)`;
 
     });
 
-</script>
-<div class="cards-home">
+    card.addEventListener('mouseleave', () => {
 
-    <div class="sec-badge">O que fazemos</div>
-    <h2 class="sec-titulo">Como <span>atuamos</span></h2>
-    <p class="sec-sub">Cada ação representa um animal com mais chance de ter uma vida digna e feliz.</p>
+        card.style.transform =
+            'perspective(1000px) rotateX(0) rotateY(0) scale(1)';
 
-    <div class="cards-grid">
+    });
 
-        <div class="card fade">
-            <div class="card-icone">🚑</div>
-            <h3>Resgate e Socorro</h3>
-            <p>Atuamos no resgate de animais em situação de risco, maus-tratos ou abandono, prestando socorro imediato.</p>
-        </div>
-
-        <div class="card fade">
-            <div class="card-icone">💊</div>
-            <h3>Cuidados Veterinários</h3>
-            <p>Todos os animais recebem vacinação, castração e acompanhamento veterinário completo até a adoção.</p>
-        </div>
-
-        <div class="card fade">
-            <div class="card-icone">🏡</div>
-            <h3>Adoção Responsável</h3>
-            <p>Fazemos o processo com análise cuidadosa para garantir um lar adequado e amoroso para cada animal.</p>
-        </div>
-
-    </div>
-
-</div>
-
-
-<!-- =====================
-     BANNER CTA
-     ===================== -->
-
-<section class="cta-banner">
-    <h2>Faça parte dessa história 🐾</h2>
-    <p>Seu apoio é fundamental para continuarmos resgatando e cuidando de animais que precisam de ajuda.</p>
-    <div class="grupo-botoes">
-        <a href="ajudar.html" class="btn btn-branco">QUERO DOAR</a>
-        <a href="ajudar.html" class="btn btn-contorno-w">QUERO ADOTAR</a>
-        <a href="ajudar.html" class="btn btn-contorno-w">QUERO APADRINHAR</a>
-    </div>
-</section>
-
-
-<!-- =====================
-     RODAPÉ
-     ===================== -->
-
-<footer>
-    <div class="footer-inner">
-
-        <div class="footer-marca">
-            <a class="logo" href="index.html"><span>Aumor</span> em Patas 🐾</a>
-            <p>ONG dedicada ao resgate, cuidado e adoção responsável de animais desde 2019. Cada vida importa.</p>
-        </div>
-
-        <div class="footer-col">
-            <h5>Páginas</h5>
-            <ul>
-                <li><a href="index.html">Início</a></li>
-                <li><a href="Sobre.html">Sobre nós</a></li>
-                <li><a href="ajudar.html">Quero ajudar</a></li>
-                <li><a href="objetivo.html">Nosso objetivo</a></li>
-            </ul>
-        </div>
-
-        <div class="footer-col">
-            <h5>Contato</h5>
-            <ul>
-                <li><a href="#">(11) 99999-0000</a></li>
-                <li><a href="#">contato@aumorempatas.org</a></li>
-                <li><a href="#">São Paulo, SP</a></li>
-            </ul>
-        </div>
-
-    </div>
-    <div class="footer-fundo">© 2026 — <strong>Aumor em Patas</strong> 🐶🐱 — Feito com amor pelos animais.</div>
-</footer>
-
-
-<!-- =====================
-     JAVASCRIPT
-     ===================== -->
-
-<script>
-
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('show');
-            }
-        });
-    }, { threshold: 0.12 });
-
-    document.querySelectorAll('.fade').forEach(el => observer.observe(el));
+});
 
 </script>
-
 
 </body>
-<script>
-
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('show');
-            }
-        });
-    }, { threshold: 0.12 });
-
-    document.querySelectorAll('.fade').forEach(el => observer.observe(el));
-
-
-
-    /* =====================
-       EFEITO 3D NOS CARDS
-       ===================== */
-
-    const cards = document.querySelectorAll('.card');
-
-    cards.forEach(card => {
-
-        card.addEventListener('mousemove', (e) => {
-
-            const rect = card.getBoundingClientRect();
-
-            const x = e.clientX - rect.left;
-            const y = e.clientY - rect.top;
-
-            const centerX = rect.width / 2;
-            const centerY = rect.height / 2;
-
-            const rotateY = ((x - centerX) / centerX) * 12;
-            const rotateX = ((centerY - y) / centerY) * 12;
-
-            card.style.transform =
-                `perspective(1000px)
-                 rotateX(${rotateX}deg)
-                 rotateY(${rotateY}deg)
-                 scale(1.04)`;
-
-        });
-
-        card.addEventListener('mouseleave', () => {
-
-            card.style.transform =
-                'perspective(1000px) rotateX(0) rotateY(0) scale(1)';
-
-        });
-
-    });
-
-</script>
 </html>
