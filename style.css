@@ -114,7 +114,9 @@ nav{
     background:linear-gradient(135deg,var(--roxo) 0%,#7c00e0 100%);
 }
 
-/* LAYOUT PRINCIPAL */
+/* =====================
+   LAYOUT PRINCIPAL
+===================== */
 
 .img-wrap{
     display:flex;
@@ -126,7 +128,9 @@ nav{
     flex-wrap:wrap;
 }
 
-/* GALERIA */
+/* =====================
+   GALERIA
+===================== */
 
 .galeria{
     display:flex;
@@ -163,24 +167,45 @@ nav{
     border-color:#7c00e0;
 }
 
-/* TEXTO */
+/* =====================
+   TEXTO SOBRE
+===================== */
 
-.hero-texto{
-    max-width:520px;
+.sobre-conteudo{
+    padding-left:20px;
 }
 
-.hero-badge{
-    display:inline-block;
-    background:#e8dcff;
-    color:var(--roxo);
-    font-size:.75rem;
+.sec-badge{
+    background:#f3ebff;
+    color:#6d00d3;
+    width:max-content;
+    padding:10px 16px;
+    border-radius:40px;
     font-weight:700;
-    letter-spacing:1.5px;
-    text-transform:uppercase;
-    padding:7px 18px;
-    border-radius:50px;
-    margin-bottom:22px;
+    margin-bottom:20px;
 }
+
+.sec-titulo{
+    font-size:3rem;
+    line-height:1.1;
+    margin-bottom:24px;
+    color:#4b00b5;
+}
+
+.sec-titulo span{
+    color:#7c00e0;
+}
+
+.sobre-txt p{
+    color:#7a6e8a;
+    line-height:1.9;
+    margin-bottom:18px;
+    font-size:1rem;
+}
+
+/* =====================
+   HERO TEXTO
+===================== */
 
 .hero h1{
     font-family:'Playfair Display',serif;
@@ -191,13 +216,9 @@ nav{
     margin-bottom:22px;
 }
 
-/* PALAVRA COLORIDA */
-
 .hero h1 span{
     color:var(--roxo-claro);
 }
-
-/* PARÁGRAFOS */
 
 .hero p{
     font-size:1rem;
@@ -206,7 +227,9 @@ nav{
     margin-bottom:18px;
 }
 
-/* CHIPS */
+/* =====================
+   CHIPS
+===================== */
 
 .chips{
     display:flex;
@@ -222,6 +245,38 @@ nav{
     border-radius:50px;
     font-size:.85rem;
     font-weight:700;
+}
+
+/* =====================
+   BOTÕES
+===================== */
+
+.btn{
+    display:inline-block;
+    padding:14px 24px;
+    border-radius:12px;
+    font-weight:700;
+    transition:.3s;
+    text-decoration:none;
+}
+
+.btn:hover{
+    transform:translateY(-3px);
+}
+
+.btn-branco{
+    background:#fff;
+    color:#4b00b5;
+}
+
+.btn-contorno-w{
+    border:2px solid #fff;
+    color:#fff;
+}
+
+.btn-contorno-w:hover{
+    background:#fff;
+    color:#4b00b5;
 }
 
 /* =====================
@@ -256,6 +311,10 @@ nav{
         max-width:420px;
         height:auto;
     }
+
+    .sobre-conteudo{
+        padding-left:0;
+    }
 }
 
 @media(max-width:600px){
@@ -280,5 +339,9 @@ nav{
     .miniaturas img{
         width:70px;
         height:70px;
+    }
+
+    .sec-titulo{
+        font-size:2.2rem;
     }
 }
