@@ -2,446 +2,415 @@
 <html lang="pt-br">
 <head>
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aumor em Patas — Início</title>
-
-    <style>
-
-        *{
-            margin:0;
-            padding:0;
-            box-sizing:border-box;
-            text-decoration:none;
-            font-family:Arial, Helvetica, sans-serif;
-        }
-
-        body{
-            background:#fff;
-            color:#222;
-        }
-
-        /* MENU */
-
-        header{
-            width:100%;
-            background:#fff;
-            box-shadow:0 2px 10px rgba(0,0,0,0.08);
-            position:sticky;
-            top:0;
-            z-index:1000;
-        }
-
-        nav{
-            max-width:1200px;
-            margin:auto;
-            padding:18px 32px;
-            display:flex;
-            align-items:center;
-            justify-content:space-between;
-        }
-
-        .logo{
-            font-size:1.5rem;
-            font-weight:800;
-            color:#4b00b5;
-        }
-
-        .logo span{
-            color:#ff4d4d;
-        }
-
-        .menu{
-            display:flex;
-            gap:28px;
-        }
-
-        .menu a{
-            color:#333;
-            font-weight:700;
-            transition:.3s;
-        }
-
-        .menu a:hover{
-            color:#7c00e0;
-        }
-
-        /* HERO */
-
-        .hero-home {
-            min-height: calc(100vh - 70px);
-            background: linear-gradient(135deg, #4b00b5 0%, #7c00e0 60%, #b700c9 100%);
-            display: flex;
-            align-items: center;
-            padding: 60px 32px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero-home::before {
-            content: '🐾';
-            position: absolute;
-            font-size: 28rem;
-            opacity: 0.04;
-            right: -60px;
-            bottom: -80px;
-        }
-
-        .hero-inner {
-            max-width: 1100px;
-            margin: auto;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 64px;
-            align-items: center;
-            width: 100%;
-        }
-
-        .hero-txt h1 {
-            font-size: clamp(2.6rem, 5vw, 4.2rem);
-            color: #fff;
-            font-weight: 900;
-            line-height: 1.1;
-            margin-bottom: 20px;
-        }
-
-        .hero-txt h1 em {
-            font-style: normal;
-            color: #ffb3b3;
-        }
-
-        .hero-txt p {
-            color: rgba(255, 255, 255, 0.8);
-            font-size: 1.05rem;
-            line-height: 1.8;
-            margin-bottom: 36px;
-            max-width: 460px;
-        }
-
-        .hero-badge{
-            background:rgba(255,255,255,0.15);
-            color:#fff;
-            width:max-content;
-            padding:10px 16px;
-            border-radius:50px;
-            margin-bottom:20px;
-            font-weight:700;
-        }
-
-        .grupo-botoes{
-            display:flex;
-            gap:16px;
-            flex-wrap:wrap;
-        }
-
-        .btn{
-            padding:14px 24px;
-            border-radius:12px;
-            font-weight:700;
-            transition:.3s;
-        }
-
-        .btn-branco{
-            background:#fff;
-            color:#4b00b5;
-        }
-
-        .btn-branco:hover{
-            transform:translateY(-3px);
-        }
-
-        .btn-contorno-w{
-            border:2px solid #fff;
-            color:#fff;
-        }
-
-        .btn-contorno-w:hover{
-            background:#fff;
-            color:#4b00b5;
-        }
-
-        /* FOTO */
-
-        .blob-wrap {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-        }
-
-        .blob {
-            width: 380px;
-            height: 380px;
-            border-radius: 50%;
-            overflow:hidden;
-            border:6px solid rgba(255,255,255,0.2);
-            animation: pulse 5s infinite;
-        }
-
-        .blob img{
-            width:100%;
-            height:100%;
-            object-fit:cover;
-        }
-
-        @keyframes pulse{
-            0%{transform:scale(1);}
-            50%{transform:scale(1.03);}
-            100%{transform:scale(1);}
-        }
-
-        .badge-flutuante {
-            position: absolute;
-            background: #fff;
-            border-radius: 16px;
-            padding: 11px 16px;
-            box-shadow: 0 8px 28px rgba(0, 0, 0, 0.14);
-            font-size: 0.82rem;
-            font-weight: 700;
-            color: #4b00b5;
-        }
-
-        .badge-flutuante.b1 {
-            top: 36px;
-            right: 0;
-        }
-
-        .badge-flutuante.b2 {
-            bottom: 56px;
-            left: 0;
-        }
-
-        .ponto {
-            width: 9px;
-            height: 9px;
-            border-radius: 50%;
-            background: #00c875;
-        }
-
-        /* STATS */
-
-        .stats-bar{
-            display:grid;
-            grid-template-columns:repeat(4,1fr);
-            gap:20px;
-            max-width:1100px;
-            margin:auto;
-            margin-top:-50px;
-            padding:0 32px;
-            position:relative;
-            z-index:10;
-        }
-
-        .stat{
-            background:#fff;
-            border-radius:22px;
-            padding:28px;
-            text-align:center;
-            box-shadow:0 12px 30px rgba(0,0,0,0.08);
-        }
-
-        .stat h3{
-            color:#4b00b5;
-            font-size:2rem;
-            margin-bottom:8px;
-        }
-
-        /* SOBRE */
-
-        .home-sobre {
-            max-width: 1100px;
-            margin: auto;
-            padding: 90px 32px;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 72px;
-            align-items: center;
-        }
-
-        .galeria img{
-            width:100%;
-            border-radius:22px;
-        }
-
-        .imagem-principal{
-            height:420px;
-            object-fit:cover;
-            margin-bottom:18px;
-        }
-
-        .miniaturas{
-            display:flex;
-            gap:14px;
-        }
-
-        .miniaturas img{
-            width:110px;
-            height:90px;
-            object-fit:cover;
-            cursor:pointer;
-        }
-
-        .sec-badge{
-            background:#f3ebff;
-            color:#6d00d3;
-            width:max-content;
-            padding:10px 16px;
-            border-radius:40px;
-            font-weight:700;
-            margin-bottom:18px;
-        }
-
-        .sec-titulo{
-            font-size:2.5rem;
-            margin-bottom:20px;
-        }
-
-        .sec-titulo span{
-            color:#7c00e0;
-        }
-
-        .sobre-txt p {
-            color: #7a6e8a;
-            line-height: 1.85;
-            margin-bottom: 18px;
-        }
-
-        .chips{
-            display:flex;
-            flex-wrap:wrap;
-            gap:12px;
-            margin-top:20px;
-        }
-
-        .chip{
-            background:#f3ebff;
-            color:#4b00b5;
-            padding:10px 16px;
-            border-radius:30px;
-            font-weight:700;
-        }
-
-        .btn-roxo{
-            background:#6d00d3;
-            color:#fff;
-            display:inline-block;
-        }
-
-        /* CARDS */
-
-        .cards-home{
-            max-width:1100px;
-            margin:auto;
-            padding:0 32px 90px;
-        }
-
-        .cards-grid{
-            display:grid;
-            grid-template-columns:repeat(3,1fr);
-            gap:28px;
-        }
-
-        .card{
-            background:#fff;
-            border-radius:24px;
-            padding:34px;
-            box-shadow:0 12px 30px rgba(0,0,0,0.08);
-        }
-
-        .card-icone{
-            font-size:3rem;
-            margin-bottom:18px;
-        }
-
-        .card h3{
-            margin-bottom:16px;
-            color:#4b00b5;
-        }
-
-        .card p{
-            color:#666;
-            line-height:1.7;
-        }
-
-        /* CTA */
-
-        .cta-banner {
-            background: linear-gradient(135deg, #ff4d4d 0%, #b80000 100%);
-            padding: 80px 32px;
-            text-align: center;
-        }
-
-        .cta-banner h2 {
-            font-size: 3rem;
-            color: #fff;
-            margin-bottom: 14px;
-        }
-
-        .cta-banner p {
-            color: rgba(255, 255, 255, 0.8);
-            max-width: 520px;
-            margin: 0 auto 36px;
-        }
-
-        /* FOOTER */
-
-        footer{
-            background:#1d073f;
-            color:#fff;
-        }
-
-        .footer-inner{
-            max-width:1100px;
-            margin:auto;
-            padding:70px 32px;
-            display:grid;
-            grid-template-columns:2fr 1fr 1fr;
-            gap:50px;
-        }
-
-        .footer-col ul{
-            list-style:none;
-        }
-
-        .footer-col li{
-            margin-bottom:12px;
-        }
-
-        .footer-col a{
-            color:#ddd;
-        }
-
-        .footer-fundo{
-            text-align:center;
-            padding:20px;
-            border-top:1px solid rgba(255,255,255,0.1);
-            color:#bbb;
-        }
-
-        /* RESPONSIVO */
-
-        @media(max-width:900px){
-
-            .hero-inner,
-            .home-sobre,
-            .cards-grid,
-            .footer-inner,
-            .stats-bar{
-                grid-template-columns:1fr;
-            }
-
-            .blob{
-                width:260px;
-                height:260px;
-            }
-
-            .menu{
-                display:none;
-            }
-
-        }
-
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Aumor em Patas — Início</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    text-decoration:none;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:#fff;
+    color:#222;
+}
+
+/* MENU */
+
+header{
+    width:100%;
+    background:#fff;
+    box-shadow:0 2px 10px rgba(0,0,0,0.08);
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+nav{
+    max-width:1200px;
+    margin:auto;
+    padding:18px 32px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.logo{
+    font-size:1.5rem;
+    font-weight:800;
+    color:#4b00b5;
+}
+
+.logo span{
+    color:#ff4d4d;
+}
+
+.menu{
+    display:flex;
+    gap:28px;
+}
+
+.menu a{
+    color:#333;
+    font-weight:700;
+    transition:.3s;
+}
+
+.menu a:hover{
+    color:#7c00e0;
+}
+
+/* HERO */
+
+.hero-home{
+    min-height:100vh;
+    background:linear-gradient(135deg,#4b00b5 0%,#7c00e0 60%,#b700c9 100%);
+    display:flex;
+    align-items:center;
+    padding:60px 32px;
+    overflow:hidden;
+}
+
+.hero-inner{
+    max-width:1100px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:64px;
+    align-items:center;
+    width:100%;
+}
+
+.hero-txt h1{
+    font-size:4rem;
+    color:#fff;
+    font-weight:900;
+    line-height:1.1;
+    margin-bottom:20px;
+}
+
+.hero-txt h1 em{
+    color:#ffb3b3;
+    font-style:normal;
+}
+
+.hero-txt p{
+    color:rgba(255,255,255,0.8);
+    line-height:1.8;
+    margin-bottom:36px;
+}
+
+.hero-badge{
+    background:rgba(255,255,255,0.15);
+    color:#fff;
+    width:max-content;
+    padding:10px 16px;
+    border-radius:50px;
+    margin-bottom:20px;
+    font-weight:700;
+}
+
+.grupo-botoes{
+    display:flex;
+    gap:16px;
+    flex-wrap:wrap;
+}
+
+.btn{
+    padding:14px 24px;
+    border-radius:12px;
+    font-weight:700;
+    transition:.3s;
+}
+
+.btn-branco{
+    background:#fff;
+    color:#4b00b5;
+}
+
+.btn-branco:hover{
+    transform:translateY(-3px);
+}
+
+.btn-contorno-w{
+    border:2px solid #fff;
+    color:#fff;
+}
+
+.btn-contorno-w:hover{
+    background:#fff;
+    color:#4b00b5;
+}
+
+/* FOTO */
+
+.blob-wrap{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    position:relative;
+}
+
+.blob{
+    width:380px;
+    height:380px;
+    border-radius:50%;
+    overflow:hidden;
+    border:6px solid rgba(255,255,255,0.2);
+}
+
+.blob img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.badge-flutuante{
+    position:absolute;
+    background:#fff;
+    border-radius:16px;
+    padding:11px 16px;
+    box-shadow:0 8px 28px rgba(0,0,0,0.14);
+    font-size:0.82rem;
+    font-weight:700;
+    color:#4b00b5;
+}
+
+.badge-flutuante.b1{
+    top:36px;
+    right:0;
+}
+
+.badge-flutuante.b2{
+    bottom:56px;
+    left:0;
+}
+
+/* STATS */
+
+.stats-bar{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
+    max-width:1100px;
+    margin:auto;
+    margin-top:-50px;
+    padding:0 32px;
+    position:relative;
+    z-index:10;
+}
+
+.stat{
+    background:#fff;
+    border-radius:22px;
+    padding:28px;
+    text-align:center;
+    box-shadow:0 12px 30px rgba(0,0,0,0.08);
+}
+
+.stat h3{
+    color:#4b00b5;
+    font-size:2rem;
+    margin-bottom:8px;
+}
+
+/* SOBRE */
+
+.home-sobre{
+    max-width:1100px;
+    margin:auto;
+    padding:90px 32px;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:72px;
+    align-items:center;
+}
+
+.galeria img{
+    width:100%;
+    border-radius:22px;
+}
+
+.imagem-principal{
+    height:420px;
+    object-fit:cover;
+    margin-bottom:18px;
+}
+
+.miniaturas{
+    display:flex;
+    gap:14px;
+}
+
+.miniaturas img{
+    width:110px;
+    height:90px;
+    object-fit:cover;
+    cursor:pointer;
+}
+
+.sec-badge{
+    background:#f3ebff;
+    color:#6d00d3;
+    width:max-content;
+    padding:10px 16px;
+    border-radius:40px;
+    font-weight:700;
+    margin-bottom:18px;
+}
+
+.sec-titulo{
+    font-size:2.5rem;
+    margin-bottom:20px;
+}
+
+.sec-titulo span{
+    color:#7c00e0;
+}
+
+.sobre-txt p{
+    color:#7a6e8a;
+    line-height:1.85;
+    margin-bottom:18px;
+}
+
+.chips{
+    display:flex;
+    flex-wrap:wrap;
+    gap:12px;
+    margin-top:20px;
+}
+
+.chip{
+    background:#f3ebff;
+    color:#4b00b5;
+    padding:10px 16px;
+    border-radius:30px;
+    font-weight:700;
+}
+
+/* CARDS */
+
+.cards-home{
+    max-width:1100px;
+    margin:auto;
+    padding:0 32px 90px;
+}
+
+.cards-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:28px;
+}
+
+.card{
+    background:#fff;
+    border-radius:24px;
+    padding:34px;
+    box-shadow:0 12px 30px rgba(0,0,0,0.08);
+}
+
+.card-icone{
+    font-size:3rem;
+    margin-bottom:18px;
+}
+
+.card h3{
+    margin-bottom:16px;
+    color:#4b00b5;
+}
+
+.card p{
+    color:#666;
+    line-height:1.7;
+}
+
+/* CTA */
+
+.cta-banner{
+    background:linear-gradient(135deg,#ff4d4d 0%,#b80000 100%);
+    padding:80px 32px;
+    text-align:center;
+}
+
+.cta-banner h2{
+    font-size:3rem;
+    color:#fff;
+    margin-bottom:14px;
+}
+
+.cta-banner p{
+    color:rgba(255,255,255,0.8);
+    max-width:520px;
+    margin:0 auto 36px;
+}
+
+/* FOOTER */
+
+footer{
+    background:#1d073f;
+    color:#fff;
+}
+
+.footer-inner{
+    max-width:1100px;
+    margin:auto;
+    padding:70px 32px;
+    display:grid;
+    grid-template-columns:2fr 1fr 1fr;
+    gap:50px;
+}
+
+.footer-col ul{
+    list-style:none;
+}
+
+.footer-col li{
+    margin-bottom:12px;
+}
+
+.footer-col a{
+    color:#ddd;
+}
+
+.footer-fundo{
+    text-align:center;
+    padding:20px;
+    border-top:1px solid rgba(255,255,255,0.1);
+    color:#bbb;
+}
+
+/* RESPONSIVO */
+
+@media(max-width:900px){
+
+    .hero-inner,
+    .home-sobre,
+    .cards-grid,
+    .footer-inner,
+    .stats-bar{
+        grid-template-columns:1fr;
+    }
+
+    .blob{
+        width:260px;
+        height:260px;
+    }
+
+    .menu{
+        display:none;
+    }
+
+}
+
+</style>
 
 </head>
 
@@ -449,274 +418,274 @@
 
 <header>
 
-    <nav>
+<nav>
 
-        <a class="logo" href="#">
-            <span>Aumor</span> em Patas 🐾
-        </a>
+<a class="logo" href="index.html">
+<span>Aumor</span> em Patas 🐾
+</a>
 
-        <div class="menu">
-            <a href="#">SOBRE</a>
-            <a href="#">QUERO AJUDAR</a>
-            <a href="#">NOSSO OBJETIVO</a>
-        </div>
+<div class="menu">
+<a href="Sobre.html">SOBRE</a>
+<a href="ajudar.html">QUERO AJUDAR</a>
+<a href="objetivo.html">NOSSO OBJETIVO</a>
+</div>
 
-    </nav>
+</nav>
 
 </header>
 
 <section class="hero-home">
 
-    <div class="hero-inner">
+<div class="hero-inner">
 
-        <div class="hero-txt">
+<div class="hero-txt">
 
-            <div class="hero-badge">
-                🐾 ONG de Proteção Animal
-            </div>
+<div class="hero-badge">
+🐾 ONG de Proteção Animal
+</div>
 
-            <h1>
-                Todo animal merece um lar cheio de <em>amor</em>
-            </h1>
+<h1>
+Todo animal merece um lar cheio de <em>amor</em>
+</h1>
 
-            <p>
-                A Aumor em Patas é dedicada ao resgate,
-                cuidado e adoção responsável de animais.
-            </p>
+<p>
+A Aumor em Patas é dedicada ao resgate,
+cuidado e adoção responsável de animais.
+</p>
 
-            <div class="grupo-botoes">
+<div class="grupo-botoes">
 
-                <a href="#" class="btn btn-branco">
-                    Quero ajudar 🐾
-                </a>
+<a href="ajudar.html" class="btn btn-branco">
+Quero ajudar 🐾
+</a>
 
-                <a href="#" class="btn btn-contorno-w">
-                    Conheça a ONG
-                </a>
+<a href="Sobre.html" class="btn btn-contorno-w">
+Conheça a ONG
+</a>
 
-            </div>
+</div>
 
-        </div>
+</div>
 
-        <div class="blob-wrap">
+<div class="blob-wrap">
 
-            <div class="blob">
+<div class="blob">
 
-                <img
-                src="https://images.metroimg.com/2021/09/20094504/caes_e_gatos_widexl.jpg"
-                alt="Cachorro e gato">
+<img
+src="https://images.metroimg.com/2021/09/20094504/caes_e_gatos_widexl.jpg"
+alt="Cachorro e gato">
 
-            </div>
+</div>
 
-            <div class="badge-flutuante b1">
-                🐶 +230 animais resgatados
-            </div>
+<div class="badge-flutuante b1">
+🐶 +230 animais resgatados
+</div>
 
-            <div class="badge-flutuante b2">
-                🏠 148 adoções em 2024
-            </div>
+<div class="badge-flutuante b2">
+🏠 148 adoções em 2024
+</div>
 
-        </div>
+</div>
 
-    </div>
+</div>
 
 </section>
 
 <div class="stats-bar">
 
-    <div class="stat">
-        <h3>230+</h3>
-        <p>Animais resgatados</p>
-    </div>
+<div class="stat">
+<h3>230+</h3>
+<p>Animais resgatados</p>
+</div>
 
-    <div class="stat">
-        <h3>148</h3>
-        <p>Adoções realizadas</p>
-    </div>
+<div class="stat">
+<h3>148</h3>
+<p>Adoções realizadas</p>
+</div>
 
-    <div class="stat">
-        <h3>12</h3>
-        <p>Voluntários ativos</p>
-    </div>
+<div class="stat">
+<h3>12</h3>
+<p>Voluntários ativos</p>
+</div>
 
-    <div class="stat">
-        <h3>5</h3>
-        <p>Anos de atuação</p>
-    </div>
+<div class="stat">
+<h3>5</h3>
+<p>Anos de atuação</p>
+</div>
 
 </div>
 
 <section class="home-sobre">
 
-    <div class="galeria">
+<div class="galeria">
 
-        <img
-        id="imagemPrincipal"
-        class="imagem-principal"
-        src="https://images.metroimg.com/2021/09/20094504/caes_e_gatos_widexl.jpg">
+<img
+id="imagemPrincipal"
+class="imagem-principal"
+src="https://images.metroimg.com/2021/09/20094504/caes_e_gatos_widexl.jpg">
 
-        <div class="miniaturas">
+<div class="miniaturas">
 
-            <img
-            src="https://images.metroimg.com/2021/09/20094504/caes_e_gatos_widexl.jpg"
-            onclick="trocarImagem(this)">
+<img
+src="https://images.metroimg.com/2021/09/20094504/caes_e_gatos_widexl.jpg"
+onclick="trocarImagem(this)">
 
-            <img
-            src="https://gatices.blogfolha.uol.com.br/files/2020/07/aug.jpg"
-            onclick="trocarImagem(this)">
+<img
+src="https://gatices.blogfolha.uol.com.br/files/2020/07/aug.jpg"
+onclick="trocarImagem(this)">
 
-            <img
-            src="https://images.unsplash.com/photo-1548199973-03cce0bbc87b?q=80&w=900&auto=format&fit=crop"
-            onclick="trocarImagem(this)">
+<img
+src="https://images.unsplash.com/photo-1548199973-03cce0bbc87b?q=80&w=900&auto=format&fit=crop"
+onclick="trocarImagem(this)">
 
-        </div>
+</div>
 
-    </div>
+</div>
 
-    <div>
+<div>
 
-        <div class="sec-badge">Quem somos</div>
+<div class="sec-badge">Quem somos</div>
 
-        <h2 class="sec-titulo">
-            Uma história feita de <span>amor</span>
-        </h2>
+<h2 class="sec-titulo">
+Uma história feita de <span>amor</span>
+</h2>
 
-        <div class="sobre-txt">
+<div class="sobre-txt">
 
-            <p>
-                Somos uma organização dedicada à proteção,
-                cuidado e bem-estar dos animais.
-            </p>
+<p>
+Somos uma organização dedicada à proteção,
+cuidado e bem-estar dos animais.
+</p>
 
-            <p>
-                Acreditamos que todo ser vivo merece respeito,
-                amor e dignidade.
-            </p>
+<p>
+Acreditamos que todo ser vivo merece respeito,
+amor e dignidade.
+</p>
 
-        </div>
+</div>
 
-        <div class="chips">
-            <span class="chip">💛 Amor</span>
-            <span class="chip">🛡️ Proteção</span>
-            <span class="chip">🏡 Adoção</span>
-            <span class="chip">🤝 Solidariedade</span>
-        </div>
+<div class="chips">
+<span class="chip">💛 Amor</span>
+<span class="chip">🛡️ Proteção</span>
+<span class="chip">🏡 Adoção</span>
+<span class="chip">🤝 Solidariedade</span>
+</div>
 
-    </div>
+</div>
 
 </section>
 
 <section class="cards-home">
 
-    <div class="cards-grid">
+<div class="cards-grid">
 
-        <div class="card">
+<div class="card">
 
-            <div class="card-icone">🚑</div>
+<div class="card-icone">🚑</div>
 
-            <h3>Resgate e Socorro</h3>
+<h3>Resgate e Socorro</h3>
 
-            <p>
-                Atuamos no resgate de animais em situação de risco.
-            </p>
+<p>
+Atuamos no resgate de animais em situação de risco.
+</p>
 
-        </div>
+</div>
 
-        <div class="card">
+<div class="card">
 
-            <div class="card-icone">💊</div>
+<div class="card-icone">💊</div>
 
-            <h3>Cuidados Veterinários</h3>
+<h3>Cuidados Veterinários</h3>
 
-            <p>
-                Todos os animais recebem acompanhamento completo.
-            </p>
+<p>
+Todos os animais recebem acompanhamento completo.
+</p>
 
-        </div>
+</div>
 
-        <div class="card">
+<div class="card">
 
-            <div class="card-icone">🏡</div>
+<div class="card-icone">🏡</div>
 
-            <h3>Adoção Responsável</h3>
+<h3>Adoção Responsável</h3>
 
-            <p>
-                Garantimos um lar adequado para cada animal.
-            </p>
+<p>
+Garantimos um lar adequado para cada animal.
+</p>
 
-        </div>
+</div>
 
-    </div>
+</div>
 
 </section>
 
 <section class="cta-banner">
 
-    <h2>Faça parte dessa história 🐾</h2>
+<h2>Faça parte dessa história 🐾</h2>
 
-    <p>
-        Seu apoio é fundamental para continuarmos ajudando animais.
-    </p>
+<p>
+Seu apoio é fundamental para continuarmos ajudando animais.
+</p>
 
-    <div class="grupo-botoes">
+<div class="grupo-botoes">
 
-        <a href="#" class="btn btn-branco">
-            QUERO DOAR
-        </a>
+<a href="ajudar.html" class="btn btn-branco">
+QUERO DOAR
+</a>
 
-        <a href="#" class="btn btn-contorno-w">
-            QUERO ADOTAR
-        </a>
+<a href="objetivo.html" class="btn btn-contorno-w">
+QUERO ADOTAR
+</a>
 
-    </div>
+</div>
 
 </section>
 
 <footer>
 
-    <div class="footer-inner">
+<div class="footer-inner">
 
-        <div>
+<div>
 
-            <a class="logo" href="#">
-                <span>Aumor</span> em Patas 🐾
-            </a>
+<a class="logo" href="index.html">
+<span>Aumor</span> em Patas 🐾
+</a>
 
-            <p>
-                ONG dedicada ao resgate, cuidado e adoção responsável.
-            </p>
+<p>
+ONG dedicada ao resgate, cuidado e adoção responsável.
+</p>
 
-        </div>
+</div>
 
-        <div class="footer-col">
+<div class="footer-col">
 
-            <h5>Páginas</h5>
+<h5>Páginas</h5>
 
-            <ul>
-                <li><a href="#">Início</a></li>
-                <li><a href="#">Sobre</a></li>
-                <li><a href="#">Ajuda</a></li>
-            </ul>
+<ul>
+<li><a href="index.html">Início</a></li>
+<li><a href="Sobre.html">Sobre</a></li>
+<li><a href="ajudar.html">Ajuda</a></li>
+</ul>
 
-        </div>
+</div>
 
-        <div class="footer-col">
+<div class="footer-col">
 
-            <h5>Contato</h5>
+<h5>Contato</h5>
 
-            <ul>
-                <li><a href="#">(11) 99999-0000</a></li>
-                <li><a href="#">contato@aumorempatas.org</a></li>
-                <li><a href="#">São Paulo - SP</a></li>
-            </ul>
+<ul>
+<li><a href="#">(11) 99999-0000</a></li>
+<li><a href="#">contato@aumorempatas.org</a></li>
+<li><a href="#">São Paulo - SP</a></li>
+</ul>
 
-        </div>
+</div>
 
-    </div>
+</div>
 
-    <div class="footer-fundo">
-        © 2026 — Aumor em Patas 🐶🐱
-    </div>
+<div class="footer-fundo">
+© 2026 — Aumor em Patas 🐶🐱
+</div>
 
 </footer>
 
@@ -724,10 +693,10 @@
 
 function trocarImagem(imagem){
 
-    const principal =
-    document.getElementById('imagemPrincipal');
+const principal =
+document.getElementById('imagemPrincipal');
 
-    principal.src = imagem.src;
+principal.src = imagem.src;
 
 }
 
