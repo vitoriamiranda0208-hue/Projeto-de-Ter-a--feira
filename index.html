@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
 
 <meta charset="UTF-8">
@@ -9,9 +10,11 @@
 
 <link rel="stylesheet" href="style.css">
 
-</head>
-
 <style>
+
+/* =========================
+   RESET
+========================= */
 
 *{
     margin:0;
@@ -24,9 +27,12 @@
 body{
     background:#fff;
     color:#222;
+    overflow-x:hidden;
 }
 
-/* MENU */
+/* =========================
+   MENU
+========================= */
 
 header{
     width:100%;
@@ -71,7 +77,9 @@ nav{
     color:#7c00e0;
 }
 
-/* HERO */
+/* =========================
+   HERO
+========================= */
 
 .hero-home{
     min-height:100vh;
@@ -79,7 +87,6 @@ nav{
     display:flex;
     align-items:center;
     padding:60px 32px;
-    overflow:hidden;
 }
 
 .hero-inner{
@@ -106,7 +113,7 @@ nav{
 }
 
 .hero-txt p{
-    color:rgba(255,255,255,0.8);
+    color:rgba(255,255,255,0.85);
     line-height:1.8;
     margin-bottom:36px;
 }
@@ -153,7 +160,9 @@ nav{
     color:#4b00b5;
 }
 
-/* FOTO */
+/* =========================
+   FOTO HERO
+========================= */
 
 .blob-wrap{
     display:flex;
@@ -197,7 +206,9 @@ nav{
     left:0;
 }
 
-/* STATS */
+/* =========================
+   STATS
+========================= */
 
 .stats-bar{
     display:grid;
@@ -225,39 +236,61 @@ nav{
     margin-bottom:8px;
 }
 
-/* SOBRE */
+/* =========================
+   SOBRE
+========================= */
 
 .home-sobre{
-    max-width:1100px;
+    max-width:1200px;
     margin:auto;
-    padding:90px 32px;
+    padding:100px 32px;
     display:grid;
     grid-template-columns:1fr 1fr;
-    gap:72px;
+    gap:80px;
     align-items:center;
 }
 
-.galeria img{
-    width:100%;
-    border-radius:22px;
+/* GALERIA */
+
+.galeria{
+    display:flex;
+    align-items:center;
+    gap:20px;
 }
 
 .imagem-principal{
+    width:470px;
     height:420px;
     object-fit:cover;
-    margin-bottom:18px;
+    border-radius:28px;
+    box-shadow:0 20px 50px rgba(0,0,0,0.12);
 }
 
 .miniaturas{
     display:flex;
+    flex-direction:column;
     gap:14px;
 }
 
 .miniaturas img{
-    width:110px;
-    height:90px;
+    width:95px;
+    height:95px;
     object-fit:cover;
+    border-radius:18px;
     cursor:pointer;
+    transition:.3s;
+    border:3px solid transparent;
+}
+
+.miniaturas img:hover{
+    transform:scale(1.05);
+    border-color:#7c00e0;
+}
+
+/* TEXTO SOBRE */
+
+.sobre-conteudo{
+    padding-left:20px;
 }
 
 .sec-badge{
@@ -267,12 +300,14 @@ nav{
     padding:10px 16px;
     border-radius:40px;
     font-weight:700;
-    margin-bottom:18px;
+    margin-bottom:20px;
 }
 
 .sec-titulo{
-    font-size:2.5rem;
-    margin-bottom:20px;
+    font-size:3rem;
+    line-height:1.1;
+    margin-bottom:24px;
+    color:#1d073f;
 }
 
 .sec-titulo span{
@@ -281,26 +316,31 @@ nav{
 
 .sobre-txt p{
     color:#7a6e8a;
-    line-height:1.85;
+    line-height:1.9;
     margin-bottom:18px;
+    font-size:1rem;
 }
+
+/* CHIPS */
 
 .chips{
     display:flex;
     flex-wrap:wrap;
-    gap:12px;
-    margin-top:20px;
+    gap:14px;
+    margin-top:28px;
 }
 
 .chip{
     background:#f3ebff;
     color:#4b00b5;
-    padding:10px 16px;
+    padding:10px 18px;
     border-radius:30px;
     font-weight:700;
 }
 
-/* CARDS */
+/* =========================
+   CARDS
+========================= */
 
 .cards-home{
     max-width:1100px;
@@ -319,6 +359,11 @@ nav{
     border-radius:24px;
     padding:34px;
     box-shadow:0 12px 30px rgba(0,0,0,0.08);
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-6px);
 }
 
 .card-icone{
@@ -336,7 +381,9 @@ nav{
     line-height:1.7;
 }
 
-/* CTA */
+/* =========================
+   CTA
+========================= */
 
 .cta-banner{
     background:linear-gradient(135deg,#ff4d4d 0%,#b80000 100%);
@@ -356,7 +403,9 @@ nav{
     margin:0 auto 36px;
 }
 
-/* FOOTER */
+/* =========================
+   FOOTER
+========================= */
 
 footer{
     background:#1d073f;
@@ -391,7 +440,9 @@ footer{
     color:#bbb;
 }
 
-/* RESPONSIVO */
+/* =========================
+   RESPONSIVO
+========================= */
 
 @media(max-width:900px){
 
@@ -403,6 +454,24 @@ footer{
         grid-template-columns:1fr;
     }
 
+    .home-sobre{
+        gap:50px;
+    }
+
+    .galeria{
+        flex-direction:column;
+    }
+
+    .miniaturas{
+        flex-direction:row;
+    }
+
+    .imagem-principal{
+        width:100%;
+        max-width:450px;
+        height:auto;
+    }
+
     .blob{
         width:260px;
         height:260px;
@@ -410,6 +479,18 @@ footer{
 
     .menu{
         display:none;
+    }
+
+    .hero-txt h1{
+        font-size:2.8rem;
+    }
+
+    .sec-titulo{
+        font-size:2.3rem;
+    }
+
+    .sobre-conteudo{
+        padding-left:0;
     }
 
 }
@@ -546,9 +627,11 @@ onclick="trocarImagem(this)">
 
 </div>
 
-<div>
+<div class="sobre-conteudo">
 
-<div class="sec-badge">Quem somos</div>
+<div class="sec-badge">
+Quem somos
+</div>
 
 <h2 class="sec-titulo">
 Uma história feita de <span>amor</span>
@@ -569,129 +652,17 @@ amor e dignidade.
 </div>
 
 <div class="chips">
+
 <span class="chip">💛 Amor</span>
 <span class="chip">🛡️ Proteção</span>
 <span class="chip">🏡 Adoção</span>
 <span class="chip">🤝 Solidariedade</span>
-</div>
-
-</div>
-
-</section>
-
-<section class="cards-home">
-
-<div class="cards-grid">
-
-<div class="card">
-
-<div class="card-icone">🚑</div>
-
-<h3>Resgate e Socorro</h3>
-
-<p>
-Atuamos no resgate de animais em situação de risco.
-</p>
-
-</div>
-
-<div class="card">
-
-<div class="card-icone">💊</div>
-
-<h3>Cuidados Veterinários</h3>
-
-<p>
-Todos os animais recebem acompanhamento completo.
-</p>
-
-</div>
-
-<div class="card">
-
-<div class="card-icone">🏡</div>
-
-<h3>Adoção Responsável</h3>
-
-<p>
-Garantimos um lar adequado para cada animal.
-</p>
 
 </div>
 
 </div>
 
 </section>
-
-<section class="cta-banner">
-
-<h2>Faça parte dessa história 🐾</h2>
-
-<p>
-Seu apoio é fundamental para continuarmos ajudando animais.
-</p>
-
-<div class="grupo-botoes">
-
-<a href="ajudar.html" class="btn btn-branco">
-QUERO DOAR
-</a>
-
-<a href="objetivo.html" class="btn btn-contorno-w">
-QUERO ADOTAR
-</a>
-
-</div>
-
-</section>
-
-<footer>
-
-<div class="footer-inner">
-
-<div>
-
-<a class="logo" href="index.html">
-<span>Aumor</span> em Patas 🐾
-</a>
-
-<p>
-ONG dedicada ao resgate, cuidado e adoção responsável.
-</p>
-
-</div>
-
-<div class="footer-col">
-
-<h5>Páginas</h5>
-
-<ul>
-<li><a href="index.html">Início</a></li>
-<li><a href="Sobre.html">Sobre</a></li>
-<li><a href="ajudar.html">Ajuda</a></li>
-</ul>
-
-</div>
-
-<div class="footer-col">
-
-<h5>Contato</h5>
-
-<ul>
-<li><a href="#">(11) 99999-0000</a></li>
-<li><a href="#">contato@aumorempatas.org</a></li>
-<li><a href="#">São Paulo - SP</a></li>
-</ul>
-
-</div>
-
-</div>
-
-<div class="footer-fundo">
-© 2026 — Aumor em Patas 🐶🐱
-</div>
-
-</footer>
 
 <script>
 
