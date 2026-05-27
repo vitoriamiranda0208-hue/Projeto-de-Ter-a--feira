@@ -115,6 +115,30 @@ nav{
 }
 
 /* =====================
+   HERO TEXTO
+===================== */
+
+.hero h1{
+    font-family:'Playfair Display',serif;
+    font-size:clamp(2.5rem,5vw,4.2rem);
+    font-weight:900;
+    line-height:1.1;
+    color:#ffffff;
+    margin-bottom:22px;
+}
+
+.hero h1 span{
+    color:#ffb3ff;
+}
+
+.hero p{
+    font-size:1rem;
+    line-height:1.8;
+    color:rgba(255,255,255,0.85);
+    margin-bottom:18px;
+}
+
+/* =====================
    LAYOUT PRINCIPAL
 ===================== */
 
@@ -201,30 +225,6 @@ nav{
     line-height:1.9;
     margin-bottom:18px;
     font-size:1rem;
-}
-
-/* =====================
-   HERO TEXTO
-===================== */
-
-.hero h1{
-    font-family:'Playfair Display',serif;
-    font-size:clamp(2.5rem,5vw,4.2rem);
-    font-weight:900;
-    line-height:1.1;
-    color:var(--escuro);
-    margin-bottom:22px;
-}
-
-.hero h1 span{
-    color:var(--roxo-claro);
-}
-
-.hero p{
-    font-size:1rem;
-    line-height:1.8;
-    color:var(--subtexto);
-    margin-bottom:18px;
 }
 
 /* =====================
