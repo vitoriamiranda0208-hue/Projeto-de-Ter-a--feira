@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aumor em Patas — Nosso Objetivo</title>
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+
+        /* =====================
+           MISSÃO / VISÃO / VALORES
+           ===================== */
+
+        .mvv {
+            max-width: 1100px;
+            margin: auto;
+            padding: 80px 32px;
+        }
+
+        .mvv-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin-top: 48px;
+        }
+
+        .mvv-card {
+            border-radius: 24px;
+            padding: 40px 28px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .mvv-card:hover {
+            transform: translateY(-6px);
+        }
+
+        .mvv-card.m1 { background: #f3eeff; }
+        .mvv-card.m2 { background: #fff5f5; }
+        .mvv-card.m3 { background: #f0fff4; }
+
+        .mvv-icone {
+            font-size: 2.6rem;
+            margin-bottom: 14px;
+        }
+
+        .mvv-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.12rem;
+            margin-bottom: 12px;
+        }
+
+        .mvv-card.m1 h3 { color: #4b00b5; }
+        .mvv-card.m2 h3 { color: #ff4d4d; }
+        .mvv-card.m3 h3 { color: #2e7d32; }
+
+        .mvv-card p {
+            color: #7a6e8a;
+            font-size: 0.9rem;
+            line-height: 1.65;
+        }
+
+
+        /* =====================
+           METAS
+           ===================== */
+
+        .metas {
+            background: #f3eeff;
+            padding: 80px 32px;
+        }
+
+        .metas-inner {
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        .metas-lista {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+            margin-top: 48px;
+        }
+
+        .meta {
+            background: #fff;
+            border-radius: 20px;
+            padding: 28px 32px;
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            border: 1px solid rgba(75, 0, 181, 0.07);
+            box-shadow: 0 4px 16px rgba(75, 0, 181, 0.06);
+            transition: box-shadow 0.3s;
+        }
+
+        .meta:hover {
+            box-shadow: 0 10px 32px rgba(75, 0, 181, 0.1);
+        }
+
+        .meta-num {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: #4b00b5;
+            font-weight: 900;
+            min-width: 56px;
+            text-align: center;
+        }
+
+        .meta h4 {
+            color: #1a0038;
+            font-size: 0.98rem;
+            margin-bottom: 6px;
+        }
+
+        .meta p {
+            color: #7a6e8a;
+            font-size: 0.88rem;
+            line-height: 1.6;
+        }
+
+
+        /* =====================
+           PROGRESSO
+           ===================== */
+
+        .progresso {
+            max-width: 1100px;
+            margin: auto;
+            padding: 80px 32px;
+        }
+
+
+        /* =====================
+           CTA FINAL
+           ===================== */
+
+        .cta-obj {
+            background: linear-gradient(135deg, #4b00b5 0%, #7c00e0 100%);
+            padding: 80px 32px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-obj::before {
+            content: '🌟';
+            position: absolute;
+            font-size: 16rem;
+            opacity: 0.04;
+            right: -20px;
+            top: -40px;
+            pointer-events: none;
+        }
+
+        .cta-obj h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2rem, 4vw, 2.8rem);
+            color: #fff;
+            margin-bottom: 14px;
+        }
+
+        .cta-obj p {
+            color: rgba(255, 255, 255, 0.8);
+            max-width: 500px;
+            margin: 0 auto 36px;
+            line-height: 1.75;
+        }
+
+
+        /* =====================
+           RESPONSIVO
+           ===================== */
+
+        @media (max-width: 900px) {
+
+            .mvv {
+                padding: 56px 24px;
+            }
+
+            .mvv-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .metas {
+                padding: 56px 24px;
+            }
+
+            .progresso {
+                padding: 56px 24px;
+            }
+
+        }
+
+    </style>
+
+</head>
+<body>
+
+
+<!-- =====================
+     MENU
+     ===================== -->
+
+<header>
+    <nav>
+        <a class="logo" href="index.html"><span>Aumor</span> em Patas 🐾</a>
+        <div class="menu">
+            <a href="index.html">INÍCIO</a>
+            <a href="Sobre.html">SOBRE</a>
+            <a href="ajudar.html">QUERO AJUDAR</a>
+            <a href="objetivo.html" class="ativo">NOSSO OBJETIVO</a>
+        </div>
+    </nav>
+</header>
+
+
+<!-- =====================
+     HERO
+     ===================== -->
+
+<section class="hero hero-dark">
+    <div class="hero-badge">Propósito</div>
+    <h1>Um futuro mais justo para <em>todos os animais</em></h1>
+    <p>Trabalhamos com foco, dedicação e amor para construir um mundo onde nenhum animal sofra por falta de cuidado ou atenção.</p>
+</section>
+
+
+<!-- =====================
+     MISSÃO / VISÃO / VALORES
+     ===================== -->
+
+<section class="mvv">
+
+    <div class="sec-badge">Fundamentos</div>
+    <h2 class="sec-titulo">Missão, Visão & <span>Valores</span></h2>
+    <p class="sec-sub">Os pilares que guiam cada decisão e ação da Aumor em Patas.</p>
+
+    <div class="mvv-grid">
+
+        <div class="mvv-card m1 fade">
+            <div class="mvv-icone">🎯</div>
+            <h3>Nossa Missão</h3>
+            <p>Promover o bem-estar animal por meio de resgate, reabilitação e adoção responsável, transformando vidas e conscientizando a sociedade.</p>
+        </div>
+
+        <div class="mvv-card m2 fade">
+            <div class="mvv-icone">👁️</div>
+            <h3>Nossa Visão</h3>
+            <p>Um futuro onde nenhum animal seja abandonado, maltratado ou negligenciado — onde cada ser vivo tenha dignidade e amor garantidos.</p>
+        </div>
+
+        <div class="mvv-card m3 fade">
+            <div class="mvv-icone">💎</div>
+            <h3>Nossos Valores</h3>
+            <p>Compaixão, transparência, responsabilidade e comprometimento guiam cada uma das nossas ações e decisões.</p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================
+     METAS
+     ===================== -->
+
+<section class="metas">
+    <div class="metas-inner">
+
+        <div class="sec-badge">O que buscamos</div>
+        <h2 class="sec-titulo">Nossas <span>Metas</span></h2>
+        <p class="sec-sub">Objetivos concretos que nos movem todos os dias para fazer mais e melhor.</p>
+
+        <div class="metas-lista">
+
+            <div class="meta fade">
+                <div class="meta-num">01</div>
+                <div>
+                    <h4>Resgatar 500 animais por ano</h4>
+                    <p>Expandir nossa capacidade de resgate para atender mais animais em situação de risco em toda a região.</p>
+                </div>
+            </div>
+
+            <div class="meta fade">
+                <div class="meta-num">02</div>
+                <div>
+                    <h4>Zerar a eutanásia por superpopulação</h4>
+                    <p>Ampliar campanhas de castração gratuita e conscientização para reduzir o abandono e a superpopulação animal.</p>
+                </div>
+            </div>
+
+            <div class="meta fade">
+                <div class="meta-num">03</div>
+                <div>
+                    <h4>Criar um centro de reabilitação permanente</h4>
+                    <p>Construir uma estrutura própria com espaço adequado para cuidar de animais com necessidades especiais.</p>
+                </div>
+            </div>
+
+            <div class="meta fade">
+                <div class="meta-num">04</div>
+                <div>
+                    <h4>Levar educação animal às escolas</h4>
+                    <p>Desenvolver programas que ensinem desde cedo o respeito e a empatia pelos animais.</p>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+
+<!-- =====================
+     PROGRESSO
+     ===================== -->
+
+<section class="progresso">
+
+    <div class="sec-badge">Nosso avanço</div>
+    <h2 class="sec-titulo">Onde <span>estamos</span></h2>
+    <p class="sec-sub" style="margin-bottom: 48px;">Acompanhe o progresso das nossas principais iniciativas em 2024.</p>
+
+    <div class="prog-item fade">
+        <div class="prog-label"><span>Animais resgatados em 2024</span><span>76%</span></div>
+        <div class="prog-trilha"><div class="prog-barra" style="width: 76%"></div></div>
+    </div>
+
+    <div class="prog-item fade">
+        <div class="prog-label"><span>Castrações realizadas</span><span>60%</span></div>
+        <div class="prog-trilha"><div class="prog-barra" style="width: 60%"></div></div>
+    </div>
+
+    <div class="prog-item fade">
+        <div class="prog-label"><span>Meta de adoções anuais</span><span>88%</span></div>
+        <div class="prog-trilha"><div class="prog-barra" style="width: 88%"></div></div>
+    </div>
+
+    <div class="prog-item fade">
+        <div class="prog-label"><span>Arrecadação para o centro</span><span>34%</span></div>
+        <div class="prog-trilha"><div class="prog-barra" style="width: 34%"></div></div>
+    </div>
+
+</section>
+
+
+<!-- =====================
+     CTA FINAL
+     ===================== -->
+
+<section class="cta-obj">
+    <h2>Faça parte desse objetivo 🐾</h2>
+    <p>Cada pessoa que se une a nós nos aproxima um passo mais de um mundo melhor para os animais.</p>
+    <div class="grupo-botoes" style="justify-content: center;">
+        <a href="ajudar.html" class="btn btn-branco">Quero ajudar agora</a>
+        <a href="Sobre.html"  class="btn btn-contorno-w">Conhecer a ONG</a>
+    </div>
+</section>
+
+
+<!-- =====================
+     RODAPÉ
+     ===================== -->
+
+<footer>
+    <div class="footer-inner">
+
+        <div class="footer-marca">
+            <a class="logo" href="index.html"><span>Aumor</span> em Patas 🐾</a>
+            <p>ONG dedicada ao resgate, cuidado e adoção responsável de animais desde 2019. Cada vida importa.</p>
+        </div>
+
+        <div class="footer-col">
+            <h5>Páginas</h5>
+            <ul>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="Sobre.html">Sobre nós</a></li>
+                <li><a href="ajudar.html">Quero ajudar</a></li>
+                <li><a href="objetivo.html">Nosso objetivo</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-col">
+            <h5>Contato</h5>
+            <ul>
+                <li><a href="#">(11) 99999-0000</a></li>
+                <li><a href="#">contato@aumorempatas.org</a></li>
+                <li><a href="#">São Paulo, SP</a></li>
+            </ul>
+        </div>
+
+    </div>
+    <div class="footer-fundo">© 2026 — <strong>Aumor em Patas</strong> 🐶🐱 — Feito com amor pelos animais.</div>
+</footer>
+
+
+<!-- =====================
+     JAVASCRIPT
+     ===================== -->
+
+<script>
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('show');
+            }
+        });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll('.fade').forEach(el => observer.observe(el));
+
+</script>
+
+
+</body>
+</html>
